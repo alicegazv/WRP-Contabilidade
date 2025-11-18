@@ -1,0 +1,544 @@
+/* Definição de Variáveis e Reset Básico */
+:root {
+    --primary-color: #8C643A; /* Marrom escuro (para botões e texto principal) */
+    --secondary-color: #E2C194; /* Bege/Areia (para fundos de contato e cards) */
+    --tertiary-color: #F8F8F8; /* Branco Suave */
+    --dark-text: #333333;
+    --light-text: #FFFFFF;
+    --font-family-primary: 'Arial', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family-primary);
+    line-height: 1.6;
+    color: var(--dark-text);
+    background-color: var(--tertiary-color);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Esconde labels para acessibilidade */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+
+/* ======================== HEADER/NAVBAR ======================== */
+
+.header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.logo img {
+    height: 40px; /* Ajuste conforme a imagem real */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark-text);
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.btn-contato {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+.btn-contato:hover {
+    background-color: #7a5833;
+}
+
+
+/* ======================== SECTION HOME (image_991da7.jpg) ======================== */
+
+.home-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.home-hero-bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.home-hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.home-content {
+    position: relative;
+    z-index: 2;
+    padding-top: 150px; /* Espaçamento superior */
+    padding-bottom: 250px; /* Espaçamento inferior para acomodar os cards */
+}
+
+.home-content .text-box {
+    background-color: rgba(140, 100, 58, 0.85); /* Cor primária com transparência */
+    color: var(--light-text);
+    padding: 40px;
+    max-width: 600px;
+    margin-bottom: 50px;
+    border-radius: 5px;
+}
+
+.home-content h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+.home-content p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.info-cards-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    position: absolute;
+    bottom: -150px; /* Posição para sobrepor a seção */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1000px;
+}
+
+.info-card {
+    background-color: var(--secondary-color);
+    width: 300px;
+    height: 180px;
+    padding: 30px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Alinha o texto na parte inferior, como na imagem */
+    position: relative;
+}
+
+.info-card::before {
+    content: '';
+    position: absolute;
+    top: -20px; /* Posiciona o elemento 'sombra' ou ícone no topo */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.5); /* Simula o efeito de sombra circular */
+    border-radius: 50%;
+}
+
+.info-card p {
+    font-weight: bold;
+    font-size: 18px;
+    color: var(--primary-color);
+}
+
+
+/* ======================== SECTION SOBRE (image_991e03.png) ======================== */
+
+.sobre-section {
+    background-color: var(--tertiary-color);
+    padding-top: 250px; /* Espaço para não colidir com os cards da Home */
+}
+
+.sobre-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 50px 0;
+}
+
+.sobre-content .image-box {
+    position: relative;
+    border: 3px solid #ba9157; /* Borda */
+    padding: 10px;
+    width: 40%;
+    max-width: 450px;
+    align-self: flex-start; /* Fixa o box no topo */
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.sobre-content .image-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+}
+
+.sobre-content .image-box .tag {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: var(--dark-text);
+    font-size: 12px;
+    font-weight: bold;
+    border-bottom: 2px solid var(--primary-color); /* Linha marrom */
+    padding-bottom: 5px;
+}
+
+.sobre-content .text-box {
+    width: 60%;
+    padding: 20px;
+}
+
+.sobre-content .title-box {
+    margin-bottom: 30px;
+}
+
+.sobre-content h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--dark-text);
+    margin-bottom: 5px;
+}
+
+.sobre-content h3 {
+    font-size: 20px;
+    color: #666;
+    font-weight: normal;
+}
+
+.sobre-content .intro-text {
+    font-style: italic;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.sobre-content p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+/* ======================== SECTION SERVIÇOS (image_991e3f.png) ======================== */
+
+.servicos-section {
+    padding: 80px 0;
+    background-color: #ba91573d;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--dark-text);
+    margin-bottom: 5px;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.service-card {
+    background-color: var(--tertiary-color);
+    padding: 25px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.3s;
+}
+
+.service-card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon-placeholder {
+    width: 50px;
+    height: 50px;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.saiba-mais {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 14px;
+    align-self: flex-start;
+}
+
+
+/* ======================== SECTION CONTATO (image_991e61.png) ======================== */
+
+.contato-section {
+    background-color: var(--secondary-color);
+    padding: 80px 0;
+}
+
+.contato-grid {
+    display: flex;
+    gap: 50px;
+}
+
+.form-container {
+    width: 50%;
+}
+
+.contato-info {
+    width: 50%;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="tel"],
+.form-container textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-container textarea {
+    height: 150px;
+    resize: none;
+}
+
+.btn-enviar {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-enviar:hover {
+    background-color: #7a5833;
+}
+
+.contato-info h2 {
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--light-text);
+    margin-bottom: 20px;
+}
+
+.contato-info .form-instruction {
+    font-size: 18px;
+    color: var(--light-text);
+    margin-bottom: 40px;
+}
+
+.contato-info .phone-instruction {
+    font-size: 16px;
+    color: var(--light-text);
+    margin-bottom: 5px;
+}
+
+.contato-info .phone-number {
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--light-text);
+}
+
+
+/* ======================== FOOTER (image_991e61.png) ======================== */
+
+.footer {
+    background-color: var(--primary-color);
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo img {
+    height: 50px; /* Ajuste conforme a imagem real */
+    filter: brightness(0) invert(1); /* Deixa o logo branco ou claro se for escuro */
+    margin-bottom: 20px;
+}
+
+.footer-links {
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: var(--light-text);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--secondary-color);
+}
+
+.social-icons {
+    margin-bottom: 20px;
+}
+
+.social-icons .icon-circle {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    margin: 0 8px;
+    font-size: 18px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.social-icons .icon-circle:hover {
+    background-color: #fff;
+}
+
+.copyright {
+    color: var(--secondary-color);
+    font-size: 12px;
+}
+
+
+/* ======================== MODAL CSS (Novo) ======================== */
+.modal {
+    display: none; /* Oculto por padrão */
+    position: fixed;
+    z-index: 10000; /* Acima de tudo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7); /* Fundo escurecido */
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* Centraliza verticalmente e horizontalmente */
+    padding: 30px;
+    border: 1px solid #888;
+    width: 80%; /* Largura do modal */
+    max-width: 700px;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modalTitle {
+    font-size: 28px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+#modalText {
+    font-size: 16px;
+    line-height: 1.6;
+}
