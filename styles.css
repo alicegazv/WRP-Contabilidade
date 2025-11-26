@@ -138,7 +138,7 @@ body {
 .home-content {
     position: relative;
     z-index: 2;
-    padding-top: 150px; /* Espaçamento superior */
+    padding-top: 120px; /* Espaçamento superior */
     padding-bottom: 250px; /* Espaçamento inferior para acomodar os cards */
 }
 
@@ -186,16 +186,16 @@ body {
 .info-card {
     background-color: var(--secondary-color);
     width: 32%;
-    min-height: 260px;
+    min-height: 170px;
 
-    padding: 40px 25px 30px 25px; /* 🔥 DIMINUÍ O TOPO PARA O TÍTULO SUBIR */
-    padding-top: 65px; /* 🔥 ADICIONA ESPAÇO PARA O TÍTULO FICAR ABAIXO DA BOLINHA */
+    padding: 18px 15px 20px 20px; /* 🔥 DIMINUÍ O TOPO PARA O TÍTULO SUBIR */
+    padding-top: 50px; /* 🔥 ADICIONA ESPAÇO PARA O TÍTULO FICAR ABAIXO DA BOLINHA */
 
     border-radius: 12px;
     text-align: center;
 
     position: relative;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
 
     display: flex;
     flex-direction: column;
@@ -235,6 +235,16 @@ body {
     line-height: 1.6;
     padding: 0 10px;
     
+}
+.info-icon {
+    width: 95px;       /* antes: 70px */
+    height: 95px;      /* antes: 70px */
+    padding: 18px;     /* mais espaço interno */
+    background-color: #d8b992;
+    border-radius: 50%;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 15px auto;
 }
 
 
@@ -359,11 +369,10 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.card-icon-placeholder {
-    width: 50px;
-    height: 50px;
-    background-color: #e0e0e0;
-    border-radius: 50%;
+.service-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
     margin-bottom: 15px;
 }
 
