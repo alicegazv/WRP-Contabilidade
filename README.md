@@ -56,5 +56,8 @@ Siga os passos abaixo para ter uma cópia do projeto em sua máquina:
 ## 🤝 Autor
 
 * **Alice Gazv** - [GitHub](https://github.com/alicegazv)
+* **Matheus Nathan** - [GitHub](https://github.com/Math-Nathan
+)
+  
 
 ---
