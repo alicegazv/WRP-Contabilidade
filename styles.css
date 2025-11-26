@@ -607,6 +607,19 @@ body {
     grid-template-columns: repeat(1, 1fr);
     gap: 30px;
 }
+.info-cards-container {             /* Seção cards abaixo do banner */
+    flex-direction: column;
+    position: static;
+    transform: none;
+    width: 100%;
+    margin-top: -80px; /* Ajuste para manter a sobreposição */
+}
+.info-card{
+    width: 100%;   
+    margin-top: 160px; /* Espaço para os cards */
+    padding-top: 20px 
+}
+
 .contato-grid {                      /* Seção Contato */
     flex-direction: column;
     
